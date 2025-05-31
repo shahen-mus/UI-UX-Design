@@ -1,2 +1,2 @@
-# WebProject
-ExarStudios - Logos &amp; Posters
+# WebProject -(ExarStudios)
+Logos &amp; Posters
