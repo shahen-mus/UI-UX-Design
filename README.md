@@ -1,4 +1,4 @@
 # UI/UX Design
-Graphic Design & Branding
+## Graphic Design & Branding
 (ExarStudios)
-Logos &amp; Posters, brochures, flyers, email newsletters and website banners
+Logos, Posters, brochures, flyers, email newsletters and website banners
