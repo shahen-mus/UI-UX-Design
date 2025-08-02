@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate | Modern Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #D946EF 100%);
+            background-size: 200% 200%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
+            border-bottom: 4px solid #6366F1;
+        }
+        
+        .testimonial-card {
+            background: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonial-card:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #6366F1, #8B5CF6);
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-item:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffffff;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-item:hover:after {
+            width: 100%;
+            background: linear-gradient(to right, #6366F1, #8B5CF6);
+        }
+        
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            background: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 1rem 1rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-indigo-600">Elevate</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#" class="nav-item text-gray-800 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#" class="nav-item text-gray-800 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Features</a>
+                        <a href="#" class="nav-item text-gray-800 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Pricing</a>
+                        <a href="#" class="nav-item text-gray-800 hover:text-indigo-600 px-3 py-2 text-sm font-medium">About</a>
+                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md text-sm font-medium transition duration-300">Get Started</button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="hamburger" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-100">Home</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-100">Features</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-100">Pricing</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-100">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Elevate Your Business with Our Solution</h1>
+                    <p class="text-xl mb-8 opacity-90">A powerful platform designed to streamline your workflow and boost productivity with cutting-edge features.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium text-lg transition duration-300">Get Started</button>
+                        <button class="border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-8 py-3 rounded-lg font-medium text-lg transition duration-300">Learn More</button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f4244b9f-d3c3-4ac3-ba84-4ccbf6f06671.png" alt="Illustration of a business dashboard with graphs and charts displayed on a laptop screen with team members collaborating" class="rounded-xl shadow-2xl" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-500 text-sm mb-8">TRUSTED BY INNOVATIVE COMPANIES</p>
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20">
+                <span class="text-2xl font-bold text-gray-600">TechCorp</span>
+                <span class="text-2xl font-bold text-gray-600">Globex</span>
+                <span class="text-2xl font-bold text-gray-600">Initech</span>
+                <span class="text-2xl font-bold text-gray-600">Acme Co</span>
+                <span class="text-2xl font-bold text-gray-600">Cyberdyne</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">Everything you need to grow your business, simplified in one integrated platform</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Advanced Analytics</h3>
+                    <p class="text-gray-600">Get real-time insights and comprehensive reports to make data-driven decisions with confidence.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Team Collaboration</h3>
+                    <p class="text-gray-600">Work seamlessly across departments with shared workspaces and integrated communication tools.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Enterprise Security</h3>
+                    <p class="text-gray-600">Bank-level encryption and compliance standards to keep your data protected at all times.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-plug text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Easy Integrations</h3>
+                    <p class="text-gray-600">Connect with hundreds of apps you already use and automate your workflow between them.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Mobile Friendly</h3>
+                    <p class="text-gray-600">Access all features on-the-go with our fully responsive mobile and tablet applications.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white p-8 rounded-xl transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">24/7 Support</h3>
+                    <p class="text-gray-600">Our customer success team is available around the clock to help you with any questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-indigo-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to transform your business?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join thousands of satisfied customers who trust our platform to power their growth.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium text-lg transition duration-300">Start Free Trial</button>
+                <button class="border-2 border-white text-white hover:bg-indigo-700 px-8 py-3 rounded-lg font-medium text-lg transition duration-300">Schedule Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">Don't just take our word for it. Here's what our customers have to say about us.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4248f416-85e5-4584-8046-4db8fdbeabda.png" alt="Portrait of Sarah Johnson, satisfied businesswoman in formal attire" class="w-12 h-12 rounded-full mr-4" />
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sarah Johnson</h4>
+                            <p class="text-gray-500">CEO, TechForward</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"This platform has transformed our operations. The analytics dashboard alone has saved us hours every week in manual reporting."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/96df7d35-7223-4ca5-819b-f76015ab83ed.png" alt="Portrait of Michael Chen, IT Director smiling in corporate office setting" class="w-12 h-12 rounded-full mr-4" />
+                        <div>
+                            <h4 class="font-bold text-gray-900">Michael Chen</h4>
+                            <p class="text-gray-500">IT Director, Globex</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The security features give me peace of mind. Implementation was seamless and our team was fully onboarded in days, not weeks."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1a1850ad-756e-4e5b-95d7-c53197c017be.png" alt="Portrait of Emma Rodriguez, marketing professional in creative workspace" class="w-12 h-12 rounded-full mr-4" />
+                        <div>
+                            <h4 class="font-bold text-gray-900">Emma Rodriguez</h4>
+                            <p class="text-gray-500">Marketing Director, Initech</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The collaboration tools have been game-changing for our distributed teams. Customer support is incredibly responsive too."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">Can't find what you're looking for? <a href="#" class="text-indigo-600 hover:underline">Contact us</a>.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <button onclick="toggleFAQ(1)" class="w-full flex justify-between items-center p-6 focus:outline-none">
+                            <h3 class="text-lg font-medium text-gray-900">How do I get started with the platform?</h3>
+                            <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300" id="faq-icon-1"></i>
+                        </button>
+                        <div id="faq-content-1" class="px-6 pb-6 hidden">
+                            <p class="text-gray-600">Getting started is simple. Sign up for a free trial, complete the onboarding wizard to configure your account, and you can begin using the platform immediately. Our team is also available for personalized onboarding sessions if needed.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <button onclick="toggleFAQ(2)" class="w-full flex justify-between items-center p-6 focus:outline-none">
+                            <h3 class="text-lg font-medium text-gray-900">What kind of support do you offer?</h3>
+                            <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300" id="faq-icon-2"></i>
+                        </button>
+                        <div id="faq-content-2" class="px-6 pb-6 hidden">
+                            <p class="text-gray-600">We offer 24/7 support via live chat and email for all customers, regardless of plan. Enterprise customers receive dedicated support managers and phone support. We also have an extensive knowledge base and regular training webinars.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <button onclick="toggleFAQ(3)" class="w-full flex justify-between items-center p-6 focus:outline-none">
+                            <h3 class="text-lg font-medium text-gray-900">Can I cancel my subscription at any time?</h3>
+                            <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300" id="faq-icon-3"></i>
+                        </button>
+                        <div id="faq-content-3" class="px-6 pb-6 hidden">
+                            <p class="text-gray-600">Yes, you can cancel your subscription anytime through your account settings. There are no cancellation fees, and you'll continue to have access until the end of your billing period. We'll also help with data export if needed.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <button onclick="toggleFAQ(4)" class="w-full flex justify-between items-center p-6 focus:outline-none">
+                            <h3 class="text-lg font-medium text-gray-900">Is my data secure with your platform?</h3>
+                            <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300" id="faq-icon-4"></i>
+                        </button>
+                        <div id="faq-content-4" class="px-6 pb-6 hidden">
+                            <p class="text-gray-600">Absolutely. We use bank-grade encryption for data at rest and in transit. Our data centers are SOC 2 Type II compliant and we undergo regular third-party security audits. Enterprise customers can choose additional security options like private cloud deployment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Stay in the loop</h2>
+                <p class="text-gray-500 mb-6">Subscribe to our newsletter for the latest updates and product news.</p>
+                <div class="flex flex-col sm:flex-row max-w-md mx-auto sm:max-w-lg">
+                    <input type="email" placeholder="Enter your email" class="flex-grow px-5 py-3 border border-gray-300 rounded-l-lg sm:rounded-r-none rounded-r-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent mb-2 sm:mb-0" />
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-r-lg sm:rounded-l-none rounded-l-lg font-medium transition duration-300">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <div class="col-span-2">
+                    <h3 class="text-xl font-bold mb-4">Elevate</h3>
+                    <p class="text-gray-400 mb-4">Empowering businesses with innovative solutions to drive growth and efficiency.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Security</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Integrations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-sm text-gray-400 text-center">
+                <p>© 2023 Shahen ♥ Elevate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // FAQ toggle functionality
+        function toggleFAQ(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('transform');
+            icon.classList.toggle('rotate-180');
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Scroll reveal animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeIn');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.feature-card, .testimonial-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
+
